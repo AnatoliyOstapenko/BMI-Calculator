@@ -81,6 +81,9 @@
                                                                 <color key="minimumTrackTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="maximumTrackTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <connections>
+                                                                    <action selector="hightSliderPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="CzS-pY-xLk"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                         <constraints>
@@ -125,6 +128,9 @@
                                                                 <color key="minimumTrackTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="maximumTrackTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="thumbTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <connections>
+                                                                    <action selector="weightSliderPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="aJ9-Xl-o9Z"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                         <constraints>
@@ -142,6 +148,9 @@
                                                                 <state key="normal" title="CALCULATE">
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="calculateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e72-pn-rSa"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -177,29 +186,104 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j3I-Z5-Vgg" secondAttribute="trailing" id="yRg-E2-3jl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calculateButton" destination="7kX-Q5-SG1" id="9X5-ri-11A"/>
+                        <outlet property="calculateLabel" destination="HhJ-Yw-82x" id="1j1-Gi-uia"/>
+                        <outlet property="heightLabel" destination="gU7-Hg-wPw" id="QKU-X0-CnF"/>
+                        <outlet property="weightLabel" destination="3Sk-G1-8TU" id="MJx-6t-QGQ"/>
+                        <segue destination="0Ex-tf-eef" kind="presentation" identifier="goToSVC" id="oEE-JJ-VYT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="75.669642857142847"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="9nW-So-0CT">
             <objects>
-                <viewController id="0Ex-tf-eef" sceneMemberID="viewController">
+                <viewController id="0Ex-tf-eef" customClass="SecondViewController" customModule="BMI_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HM6-Wf-0HI" userLabel="Background">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRI-IF-6Rr">
+                                <rect key="frame" x="20" y="291" width="374" height="260"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iZd-wj-sUf">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="260"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR RESULT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tX-2p-ZJi">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="58.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcN-WA-Tkp">
+                                                <rect key="frame" x="0.0" y="66.5" width="374" height="105.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="70"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EAT MORE DONUTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIz-K0-Bwy">
+                                                <rect key="frame" x="0.0" y="180" width="374" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="3q3-49-Div"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="iZd-wj-sUf" secondAttribute="bottom" id="Bok-4d-Z9O"/>
+                                    <constraint firstAttribute="height" constant="260" id="CKJ-gX-cEk"/>
+                                    <constraint firstItem="iZd-wj-sUf" firstAttribute="top" secondItem="cRI-IF-6Rr" secondAttribute="top" id="rik-vu-QKX"/>
+                                    <constraint firstAttribute="trailing" secondItem="iZd-wj-sUf" secondAttribute="trailing" id="tnY-ul-0dI"/>
+                                    <constraint firstItem="iZd-wj-sUf" firstAttribute="leading" secondItem="cRI-IF-6Rr" secondAttribute="leading" id="uG9-gb-EGm"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcY-59-bT7">
+                                <rect key="frame" x="20" y="748" width="376" height="60"/>
+                                <color key="backgroundColor" red="0.93749707940000004" green="0.42455947399999999" blue="0.38310396670000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="FeR-8h-984"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <state key="normal" title="RECALCULATE">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="recalculateButtonPressed:" destination="0Ex-tf-eef" eventType="touchUpInside" id="H0e-hV-a31"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="s3w-rb-hdT"/>
                         <color key="backgroundColor" red="0.17451918129999999" green="0.53764462469999996" blue="0.78428977730000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="s3w-rb-hdT" firstAttribute="trailing" secondItem="cRI-IF-6Rr" secondAttribute="trailing" constant="20" id="2Zp-io-1fQ"/>
+                            <constraint firstItem="s3w-rb-hdT" firstAttribute="trailing" secondItem="NcY-59-bT7" secondAttribute="trailing" constant="18" id="8bL-St-RgD"/>
+                            <constraint firstItem="NcY-59-bT7" firstAttribute="leading" secondItem="s3w-rb-hdT" secondAttribute="leading" constant="20" id="8sw-pE-jtv"/>
+                            <constraint firstItem="cRI-IF-6Rr" firstAttribute="leading" secondItem="s3w-rb-hdT" secondAttribute="leading" constant="20" id="EsF-cH-86r"/>
+                            <constraint firstItem="cRI-IF-6Rr" firstAttribute="centerY" secondItem="HM6-Wf-0HI" secondAttribute="centerY" id="U49-fX-E63"/>
+                            <constraint firstItem="NcY-59-bT7" firstAttribute="bottom" secondItem="s3w-rb-hdT" secondAttribute="bottom" id="Xr2-fa-Wkk"/>
+                            <constraint firstItem="cRI-IF-6Rr" firstAttribute="centerX" secondItem="HM6-Wf-0HI" secondAttribute="centerX" id="naO-2g-BPn"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bmiLabel" destination="bcN-WA-Tkp" id="rY0-Wb-QKO"/>
+                        <outlet property="recalculateButton" destination="NcY-59-bT7" id="PrM-1u-3eq"/>
+                        <outlet property="suggestionLabel" destination="dIz-K0-Bwy" id="opF-nx-yfn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xCK-zm-VSi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="938" y="76"/>
+            <point key="canvasLocation" x="937.68115942028987" y="75.669642857142847"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="341" height="682"/>
+        <image name="Background" width="341" height="682.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
