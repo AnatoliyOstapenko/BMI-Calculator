@@ -9,7 +9,8 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    var bmiResult = "0.0"
+    var bmiResult: String?
+    var currentSuggestion: String?
     
     
     @IBOutlet weak var bmiLabel: UILabel!
@@ -24,11 +25,14 @@ class SecondViewController: UIViewController {
         recalculateButton.layer.borderColor = UIColor.white.cgColor
         recalculateButton.layer.borderWidth = 2
         bmiLabel.text = bmiResult
+        suggestionLabel.text = currentSuggestion
+        self.view.backgroundColor = UIColor.red
     }
     
     @IBAction func recalculateButtonPressed(_ sender: UIButton) {
         
-        
+        // segue sends back to ViewController
+        self.dismiss(animated: true, completion: nil)
         
     }
     
