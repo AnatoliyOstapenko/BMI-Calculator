@@ -8,8 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var calculatorBrain = CalculatorBrain()
     
+    var calculatorBrain = CalculatorBrain()
     var choosenHight: Float = 0
     var choosenWeight: Float = 0
     
@@ -56,14 +56,13 @@ class ViewController: UIViewController {
         // triggered function of BMI calculation while transfering choosen weight and height.
         calculatorBrain.calculatorBMI(choosenWeight, choosenHight)
         
-        // triggered function of suggestion and color
+        // triggered foodSuggestion to transfer further "suggestion" to func prepare
         calculatorBrain.foodSuggestion()
+        // triggered getColor function to transfer further "color" to func prepare
+        calculatorBrain.getColor()
         
         // segue to show a next related "SecondViewController" on screen
         self.performSegue(withIdentifier: "goToSVC", sender: self)
-        
-       
-      
         
     }
     // this finction is needed to transmited information from ViewController to SecondViewController
@@ -74,11 +73,13 @@ class ViewController: UIViewController {
         if segue.identifier == "goToSVC" {
             
             let destinationSVC = segue.destination as! SecondViewController
-            //transmition of information to variable bmiResult in SecondViewController
+            //transferring of information to variable bmiResult in SecondViewController
             destinationSVC.bmiResult = calculatorBrain.getBMI()
             
-            //transmition of information to variable currentSuggestion in SecondViewController
+            //transferring suggestion to variable currentSuggestion in SecondViewController
             destinationSVC.currentSuggestion = calculatorBrain.suggestion
+            //transferring color to variable currentColor in SecondViewController
+            destinationSVC.currentColor = calculatorBrain.color
             
         }
        

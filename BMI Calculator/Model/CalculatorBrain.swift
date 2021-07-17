@@ -5,14 +5,16 @@
 //  Created by MacBook on 17.07.2021.
 //
 
-import Foundation
+import UIKit
+
 
 struct CalculatorBrain {
     
     var bmi: Float = 0
     var currentBMI = "100"
     var suggestion: String?
-    var color = "white"
+    var color: UIColor?
+
 
     // function of BMI calculation
     mutating func calculatorBMI(_ currentWeight: Float, _ currentHeight: Float) {
@@ -31,13 +33,21 @@ struct CalculatorBrain {
         switch bmi {
         case 0...20:
             suggestion = "EAT MORE FOOD"
-            color = "yelow"
         case 21...30:
             suggestion = "YOU ARE IN A GOOD SHAPE"
-            color = "green"
         default:
             suggestion = "EAT LESS FOOD"
-            color = "red"
+        }
+    }
+    // function of color loop
+    mutating func getColor() {
+        switch bmi {
+        case 0...20:
+            color = .purple
+        case 21...30:
+            color = .cyan
+        default:
+            color = .magenta
         }
     }
 

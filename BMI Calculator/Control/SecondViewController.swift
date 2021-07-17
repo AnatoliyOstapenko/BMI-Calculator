@@ -11,6 +11,7 @@ class SecondViewController: UIViewController {
     
     var bmiResult: String?
     var currentSuggestion: String?
+    var currentColor: UIColor?
     
     
     @IBOutlet weak var bmiLabel: UILabel!
@@ -21,12 +22,18 @@ class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // set border and white collor of button RECALCULATE
 
         recalculateButton.layer.borderColor = UIColor.white.cgColor
         recalculateButton.layer.borderWidth = 2
+        
+        // fetched BMI result
         bmiLabel.text = bmiResult
+        // fetched suggestion
         suggestionLabel.text = currentSuggestion
-        self.view.backgroundColor = UIColor.red
+        // fetch color for background view
+        self.view.backgroundColor = currentColor
     }
     
     @IBAction func recalculateButtonPressed(_ sender: UIButton) {
