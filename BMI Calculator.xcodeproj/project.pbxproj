@@ -16,6 +16,7 @@
 		FA25A3B5269F3F4500F82B2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA25A3B4269F3F4500F82B2C /* Assets.xcassets */; };
 		FA25A3B8269F3F4500F82B2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA25A3B6269F3F4500F82B2C /* LaunchScreen.storyboard */; };
 		FA25A3C1269F3F8200F82B2C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FA25A3C0269F3F8200F82B2C /* README.md */; };
+		FAA8921A26A44CED00AF33F8 /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8921926A44CED00AF33F8 /* BMI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FA25A3B7269F3F4500F82B2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA25A3B9269F3F4500F82B2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA25A3C0269F3F8200F82B2C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FAA8921926A44CED00AF33F8 /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				FA156D7026A35E6200793801 /* CalculatorBrain.swift */,
+				FAA8921926A44CED00AF33F8 /* BMI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				FA25A3B0269F3F4100F82B2C /* ViewController.swift in Sources */,
 				FA25A3AC269F3F4100F82B2C /* AppDelegate.swift in Sources */,
 				FA156D7126A35E6200793801 /* CalculatorBrain.swift in Sources */,
+				FAA8921A26A44CED00AF33F8 /* BMI.swift in Sources */,
 				FA25A3AE269F3F4100F82B2C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

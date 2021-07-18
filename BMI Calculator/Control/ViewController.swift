@@ -56,10 +56,6 @@ class ViewController: UIViewController {
         // triggered function of BMI calculation while transfering choosen weight and height.
         calculatorBrain.calculatorBMI(choosenWeight, choosenHight)
         
-        // triggered foodSuggestion to transfer further "suggestion" to func prepare
-        calculatorBrain.foodSuggestion()
-        // triggered getColor function to transfer further "color" to func prepare
-        calculatorBrain.getColor()
         
         // segue to show a next related "SecondViewController" on screen
         self.performSegue(withIdentifier: "goToSVC", sender: self)
@@ -77,9 +73,9 @@ class ViewController: UIViewController {
             destinationSVC.bmiResult = calculatorBrain.getBMI()
             
             //transferring suggestion to variable currentSuggestion in SecondViewController
-            destinationSVC.currentSuggestion = calculatorBrain.suggestion
+            destinationSVC.currentSuggestion = calculatorBrain.getSuggestion()
             //transferring color to variable currentColor in SecondViewController
-            destinationSVC.currentColor = calculatorBrain.color
+            destinationSVC.currentColor = calculatorBrain.getColor()
             
         }
        

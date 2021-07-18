@@ -10,7 +10,7 @@ import UIKit
 
 struct CalculatorBrain {
     
-    var bmi: Float = 0
+    var bmi: BMI?
     var currentBMI = "100"
     var suggestion: String?
     var color: UIColor?
@@ -19,37 +19,35 @@ struct CalculatorBrain {
     // function of BMI calculation
     mutating func calculatorBMI(_ currentWeight: Float, _ currentHeight: Float) {
         // formula bmi calculation
-        bmi = currentWeight * 10000 / (currentHeight * currentHeight)
-       
+        let bmiValue = currentWeight * 10000 / (currentHeight * currentHeight)
+        
+        switch bmiValue {
+        case 0...19:
+            bmi = BMI(value: bmiValue, suggestion: "EAT MORE FOOD", color: .purple)
+        case 20...25:
+            bmi = BMI(value: bmiValue, suggestion: "YOU ARE IN A GOOD SHAPE", color: .cyan)
+        default:
+            bmi = BMI(value: bmiValue, suggestion: "EAT LESS FOOD", color: .magenta)
+            
+        }
+        
     }
-    
+    // to change struct Float to String and dispatch it to ViewController
     mutating func getBMI() -> String {
-        currentBMI = String(format: "%.0f", bmi)
+        
+        // unwraping
+        currentBMI = String(format: "%.0f", bmi?.value ?? 0.0)
         return currentBMI
     }
     
-    // function of suggestion loop
-    mutating func foodSuggestion() {
-        switch bmi {
-        case 0...20:
-            suggestion = "EAT MORE FOOD"
-        case 21...30:
-            suggestion = "YOU ARE IN A GOOD SHAPE"
-        default:
-            suggestion = "EAT LESS FOOD"
-        }
+    // to dispatch current suggestion to ViewController
+    func getSuggestion() -> String {
+        return bmi?.suggestion ?? "error"
     }
-    // function of color loop
-    mutating func getColor() {
-        switch bmi {
-        case 0...20:
-            color = .purple
-        case 21...30:
-            color = .cyan
-        default:
-            color = .magenta
-        }
+    // to dispatch current color to ViewController
+    func getColor() -> UIColor {
+        return bmi?.color ?? .clear
     }
-
+    
     
 }
